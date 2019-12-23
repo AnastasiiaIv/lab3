@@ -86,7 +86,7 @@ SharedPtr(SharedPtr&& r ) //конструктор перемещения
         r._adress = _adress;
         _adress = tmp;
     }
-    auto use_count() const -> size_t
+    auto use_count() const -> size_t  //возвращает кол-во ссылок на объект
     {
         return _adresses[reinterpret_cast<int64_t>(_adress)];
     }
