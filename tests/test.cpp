@@ -19,6 +19,7 @@ TEST(SharedPtr, value )
     SharedPtr<int> test3 = std::move(test);
     EXPECT_EQ(static_cast<int>(test3._adress[0]), 10);
 }
+
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
