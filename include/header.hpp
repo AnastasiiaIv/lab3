@@ -26,7 +26,7 @@ explicit  SharedPtr(T* ptr)
         else
         {_adresses.insert({reinterpret_cast<int64_t>(ptr), 1});}
     };
-explicit  SharedPtr(const SharedPtr& r)
+explicit  SharedPtr(const SharedPtr& r) //конструктор копирования
 {_adress = r._adress; ++_adresses[reinterpret_cast<int64_t>(_adress)];}
     ~SharedPtr()
     {
@@ -38,7 +38,7 @@ explicit  SharedPtr(const SharedPtr& r)
             delete(_adress);
         }
     }
-SharedPtr(SharedPtr&& r )
+SharedPtr(SharedPtr&& r ) //конструктор перемещения
 {_adress = r._adress; r._adress = nullptr;}
    auto operator=(SharedPtr& r) -> SharedPtr&
    {
